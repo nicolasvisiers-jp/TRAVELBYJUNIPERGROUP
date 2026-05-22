@@ -529,6 +529,17 @@
     .co-logo-svg svg { max-height: 56px; width: auto; }
     @media (prefers-color-scheme: dark) { .co-logo-svg svg text { fill: #fff !important; } }
 
+    
+    /* ── COMPANY HERO LOGO ── */
+    .co-hero-logo-wrap { margin-bottom: 20px; }
+    .co-hero-logo-img {
+      height: 52px; width: auto; max-width: 200px;
+      object-fit: contain; object-position: left center;
+      background: rgba(255,255,255,0.12);
+      padding: 10px 16px; border-radius: 8px;
+      display: block;
+    }
+
     </style>
 </head>
 <body>
@@ -629,13 +640,11 @@
 
 <div class="page-hero">
   <div class="page-hero-inner">
-      <div class="co-logo-svg"><svg viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg">
-  <defs><linearGradient id="rm-g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8B5CF6"/><stop offset="100%" stop-color="#3B82F6"/></linearGradient></defs>
-  <path d="M8 8 L8 42 L20 42 Q32 42 32 30 Q32 22 24 20 L32 8Z M14 14 L20 14 Q26 14 26 20 Q26 26 20 26 L14 26Z" fill="url(#rm-g)"/>
-  <text x="38" y="31" font-family="Arial,sans-serif" font-size="15" font-weight="700" fill="#1F2937">rezmagic</text>
-</svg></div>
-      
-    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="co-hero-logo-wrap">
+        <img src="https://logo.clearbit.com/rezmagic.com" alt="RezMagic logo" class="co-hero-logo-img"
+             onerror="this.parentElement.innerHTML='<div style=&quot;font-size:22px;font-weight:900;color:#fff;letter-spacing:-1px&quot;>RezMagic</div>'">
+      </div>
+            <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="/TRAVELBYJUNIPERGROUP/">Travel by Juniper Group</a>
       <span class="sep">›</span>
       <a href="/TRAVELBYJUNIPERGROUP/companies/">Our Companies</a>

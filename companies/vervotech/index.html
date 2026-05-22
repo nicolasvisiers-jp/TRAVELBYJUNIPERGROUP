@@ -529,6 +529,17 @@
     .co-logo-svg svg { max-height: 56px; width: auto; }
     @media (prefers-color-scheme: dark) { .co-logo-svg svg text { fill: #fff !important; } }
 
+    
+    /* ── COMPANY HERO LOGO ── */
+    .co-hero-logo-wrap { margin-bottom: 20px; }
+    .co-hero-logo-img {
+      height: 52px; width: auto; max-width: 200px;
+      object-fit: contain; object-position: left center;
+      background: rgba(255,255,255,0.12);
+      padding: 10px 16px; border-radius: 8px;
+      display: block;
+    }
+
     </style>
 </head>
 <body>
@@ -629,14 +640,11 @@
 
 <div class="page-hero">
   <div class="page-hero-inner">
-      <div class="co-logo-svg"><svg viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg">
-  <defs><linearGradient id="vt-g" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#7C3AED"/><stop offset="100%" stop-color="#EC4899"/></linearGradient></defs>
-  <!-- V mark -->
-  <path d="M6 10 L18 38 L22 38 L28 18 L34 38 L38 38 L50 10 L44 10 L36 32 L30 10 L26 10 L20 32 L12 10Z" fill="url(#vt-g)"/>
-  <text x="56" y="31" font-family="Arial,sans-serif" font-size="15" font-weight="600" fill="#1F2937">vervotech</text>
-</svg></div>
-      
-    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="co-hero-logo-wrap">
+        <img src="https://logo.clearbit.com/vervotech.com" alt="Vervotech logo" class="co-hero-logo-img"
+             onerror="this.parentElement.innerHTML='<div style=&quot;font-size:22px;font-weight:900;color:#fff;letter-spacing:-1px&quot;>Vervotech</div>'">
+      </div>
+            <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="/TRAVELBYJUNIPERGROUP/">Travel by Juniper Group</a>
       <span class="sep">›</span>
       <a href="/TRAVELBYJUNIPERGROUP/companies/">Our Companies</a>

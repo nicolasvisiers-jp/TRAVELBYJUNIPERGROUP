@@ -529,6 +529,17 @@
     .co-logo-svg svg { max-height: 56px; width: auto; }
     @media (prefers-color-scheme: dark) { .co-logo-svg svg text { fill: #fff !important; } }
 
+    
+    /* ── COMPANY HERO LOGO ── */
+    .co-hero-logo-wrap { margin-bottom: 20px; }
+    .co-hero-logo-img {
+      height: 52px; width: auto; max-width: 200px;
+      object-fit: contain; object-position: left center;
+      background: rgba(255,255,255,0.12);
+      padding: 10px 16px; border-radius: 8px;
+      display: block;
+    }
+
     </style>
 </head>
 <body>
@@ -629,17 +640,11 @@
 
 <div class="page-hero">
   <div class="page-hero-inner">
-      <div class="co-logo-svg"><svg viewBox="0 0 130 50" xmlns="http://www.w3.org/2000/svg">
-  <!-- dot cluster mark -->
-  <circle cx="14" cy="16" r="5" fill="#E8634A"/>
-  <circle cx="24" cy="10" r="4" fill="#8BB8CC"/>
-  <circle cx="30" cy="20" r="4" fill="#F5C842"/>
-  <circle cx="10" cy="28" r="6" fill="#1A3A5C"/>
-  <circle cx="22" cy="32" r="4" fill="#8BB8CC"/>
-  <text x="42" y="32" font-family="Arial,sans-serif" font-size="17" font-weight="400" fill="#1A3A5C">inspiretec</text>
-</svg></div>
-      
-    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="co-hero-logo-wrap">
+        <img src="https://logo.clearbit.com/inspiretec.com" alt="Inspiretec logo" class="co-hero-logo-img"
+             onerror="this.parentElement.innerHTML='<div style=&quot;font-size:22px;font-weight:900;color:#fff;letter-spacing:-1px&quot;>Inspiretec</div>'">
+      </div>
+            <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="/TRAVELBYJUNIPERGROUP/">Travel by Juniper Group</a>
       <span class="sep">›</span>
       <a href="/TRAVELBYJUNIPERGROUP/companies/">Our Companies</a>

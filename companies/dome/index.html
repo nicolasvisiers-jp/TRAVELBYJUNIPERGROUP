@@ -529,6 +529,17 @@
     .co-logo-svg svg { max-height: 56px; width: auto; }
     @media (prefers-color-scheme: dark) { .co-logo-svg svg text { fill: #fff !important; } }
 
+    
+    /* ── COMPANY HERO LOGO ── */
+    .co-hero-logo-wrap { margin-bottom: 20px; }
+    .co-hero-logo-img {
+      height: 52px; width: auto; max-width: 200px;
+      object-fit: contain; object-position: left center;
+      background: rgba(255,255,255,0.12);
+      padding: 10px 16px; border-radius: 8px;
+      display: block;
+    }
+
     </style>
 </head>
 <body>
@@ -629,14 +640,11 @@
 
 <div class="page-hero">
   <div class="page-hero-inner">
-      <div class="co-logo-svg"><svg viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
-  <!-- dome/arch icon -->
-  <path d="M8 38 L8 24 Q8 8 24 8 Q40 8 40 24 L40 38Z" fill="none" stroke="#4B5563" stroke-width="2"/>
-  <path d="M12 38 L12 24 Q12 12 24 12 Q36 12 36 24 L36 38Z" fill="#6B7280" opacity="0.3"/>
-  <text x="46" y="31" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#1F2937">dome</text>
-</svg></div>
-      
-    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="co-hero-logo-wrap">
+        <img src="https://logo.clearbit.com/domeinfo.com" alt="Dome logo" class="co-hero-logo-img"
+             onerror="this.parentElement.innerHTML='<div style=&quot;font-size:22px;font-weight:900;color:#fff;letter-spacing:-1px&quot;>Dome</div>'">
+      </div>
+            <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="/TRAVELBYJUNIPERGROUP/">Travel by Juniper Group</a>
       <span class="sep">›</span>
       <a href="/TRAVELBYJUNIPERGROUP/companies/">Our Companies</a>
