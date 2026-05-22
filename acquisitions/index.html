@@ -183,11 +183,11 @@
     .nav-left { display:flex; align-items:center; gap:0; }
     .nav-brand { display:flex; align-items:center; gap:10px; text-decoration:none; }
     .nav-mark {
-      width:34px; height:34px; border-radius:8px;
-      background:var(--red-dim); border:1px solid rgba(192,57,43,0.35);
-      display:flex; align-items:center; justify-content:center;
+      width: 36px; height: 36px;
+      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
     }
-    .nav-mark svg { width:20px; height:20px; }
+    .nav-mark svg { width: 36px; height: 36px; }
     .nav-name { font-size:.95rem; font-weight:800; color:#fff; letter-spacing:-.01em; }
     .nav-sub { font-size:.55rem; font-weight:600; color:var(--dim); letter-spacing:.1em; text-transform:uppercase; margin-top:1px; }
     .nav-divider { width:1px; height:28px; background:var(--border); margin:0 20px; }
@@ -602,9 +602,29 @@
 <nav class="nav" role="navigation" aria-label="Main navigation">
   <div class="nav-left">
     <a class="nav-brand" href="/TRAVELBYJUNIPERGROUP/" aria-label="Juniper Group Travel Ecosystem Home">
-      <div class="nav-mark" aria-hidden="true">
-        <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" fill="rgba(192,57,43,0.2)" stroke="rgba(192,57,43,0.5)" stroke-width="1"/><path d="M10 3C13.5 5.5 15 9 13.5 12.5C12 16 8 16.5 5.5 13C3 9.5 5.5 4.5 8 3.5" stroke="#E8A87C" stroke-width="1.2" stroke-linecap="round" fill="none"/><circle cx="10" cy="10" r="2.2" fill="#C0392B"/></svg>
-      </div>
+      <div class="nav-mark" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Juniper Group">
+  <circle cx="18" cy="18" r="17" fill="#0A0E1A"/>
+  <!-- Globe segments -->
+  <!-- Red segment top-left -->
+  <path d="M18 1 C9 1 2 8 2 18 C2 11 9 4 18 4 Z" fill="#C0392B" opacity="0.9"/>
+  <path d="M2 18 C2 11 9 4 18 4 C12 6 7 11 6 18 Z" fill="#C0392B"/>
+  <!-- Blue segment top-right -->
+  <path d="M18 1 C27 1 34 8 34 18 C34 11 27 4 18 4 Z" fill="#2563EB" opacity="0.9"/>
+  <path d="M34 18 C34 11 27 4 18 4 C24 6 29 11 30 18 Z" fill="#2563EB"/>
+  <!-- Green segment bottom-left -->
+  <path d="M2 18 C2 28 9 35 18 35 C12 33 7 28 6 18 Z" fill="#16A34A"/>
+  <path d="M18 35 C9 35 2 28 2 18 C4 24 8 30 14 33 Z" fill="#16A34A" opacity="0.8"/>
+  <!-- Teal segment bottom-right -->
+  <path d="M34 18 C34 28 27 35 18 35 C24 33 29 28 30 18 Z" fill="#0891B2"/>
+  <path d="M18 35 C27 35 34 28 34 18 C32 24 28 30 22 33 Z" fill="#0891B2" opacity="0.8"/>
+  <!-- Globe latitude lines -->
+  <ellipse cx="18" cy="18" rx="17" ry="6" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="0.7"/>
+  <ellipse cx="18" cy="18" rx="17" ry="11" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="0.7"/>
+  <!-- Globe longitude line -->
+  <ellipse cx="18" cy="18" rx="6" ry="17" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="0.7"/>
+  <!-- Outer ring -->
+  <circle cx="18" cy="18" r="17" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="0.8"/>
+</svg></div>
       <div>
         <div class="nav-name">Travel by Juniper Group</div>
         <div class="nav-sub">A Vela Software Company</div>
@@ -1042,7 +1062,29 @@
     <div class="footer-top">
       <div class="footer-brand">
         <div class="nav-brand" style="margin-bottom:0">
-          <div class="nav-mark"><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" fill="rgba(192,57,43,0.2)" stroke="rgba(192,57,43,0.5)" stroke-width="1"/><path d="M10 3C13.5 5.5 15 9 13.5 12.5C12 16 8 16.5 5.5 13C3 9.5 5.5 4.5 8 3.5" stroke="#E8A87C" stroke-width="1.2" stroke-linecap="round" fill="none"/><circle cx="10" cy="10" r="2.2" fill="#C0392B"/></svg></div>
+          <div class="nav-mark" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Juniper Group">
+  <circle cx="18" cy="18" r="17" fill="#0A0E1A"/>
+  <!-- Globe segments -->
+  <!-- Red segment top-left -->
+  <path d="M18 1 C9 1 2 8 2 18 C2 11 9 4 18 4 Z" fill="#C0392B" opacity="0.9"/>
+  <path d="M2 18 C2 11 9 4 18 4 C12 6 7 11 6 18 Z" fill="#C0392B"/>
+  <!-- Blue segment top-right -->
+  <path d="M18 1 C27 1 34 8 34 18 C34 11 27 4 18 4 Z" fill="#2563EB" opacity="0.9"/>
+  <path d="M34 18 C34 11 27 4 18 4 C24 6 29 11 30 18 Z" fill="#2563EB"/>
+  <!-- Green segment bottom-left -->
+  <path d="M2 18 C2 28 9 35 18 35 C12 33 7 28 6 18 Z" fill="#16A34A"/>
+  <path d="M18 35 C9 35 2 28 2 18 C4 24 8 30 14 33 Z" fill="#16A34A" opacity="0.8"/>
+  <!-- Teal segment bottom-right -->
+  <path d="M34 18 C34 28 27 35 18 35 C24 33 29 28 30 18 Z" fill="#0891B2"/>
+  <path d="M18 35 C27 35 34 28 34 18 C32 24 28 30 22 33 Z" fill="#0891B2" opacity="0.8"/>
+  <!-- Globe latitude lines -->
+  <ellipse cx="18" cy="18" rx="17" ry="6" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="0.7"/>
+  <ellipse cx="18" cy="18" rx="17" ry="11" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="0.7"/>
+  <!-- Globe longitude line -->
+  <ellipse cx="18" cy="18" rx="6" ry="17" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="0.7"/>
+  <!-- Outer ring -->
+  <circle cx="18" cy="18" r="17" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="0.8"/>
+</svg></div>
           <div><div class="nav-name">Travel by Juniper Group</div><div class="nav-sub">A Vela Software Company</div></div>
         </div>
         <p>A global ecosystem of 14+ vertical market travel technology companies. Part of Vela Software, a Constellation Software company (TSX: CSU).</p>
@@ -1106,7 +1148,40 @@ function toggleFaq(el) {
 
 // LANGUAGE SWITCHER
 function switchLang(lang, el) {
-  document.querySelectorAll('.lang-btn').forEach(function(b) { b.classList.remove('on'); });
+    document.querySelectorAll('.lang-btn').forEach(function(b) { b.classList.remove('on'); });
+    el.classList.add('on');
+    // Build localized path
+    var path = window.location.pathname;
+    var base = '/TRAVELBYJUNIPERGROUP';
+    // Strip existing lang prefix if present
+    var langPrefixes = ['/es/', '/fr/', '/pt/'];
+    var stripped = path;
+    for (var i = 0; i < langPrefixes.length; i++) {
+      var lp = base + langPrefixes[i];
+      if (path.startsWith(lp)) {
+        stripped = base + '/' + path.slice(lp.length);
+        break;
+      }
+    }
+    // For non-English: show "coming soon" toast (pages not yet translated)
+    if (lang !== 'en') {
+      var toast = document.getElementById('lang-toast');
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'lang-toast';
+        toast.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#0A0E1A;color:#fff;padding:12px 24px;border-radius:8px;font-size:14px;z-index:9999;box-shadow:0 4px 20px rgba(0,0,0,0.3);transition:opacity 0.3s';
+        document.body.appendChild(toast);
+      }
+      var langNames = { es: 'Español', fr: 'Français', pt: 'Português' };
+      toast.textContent = langNames[lang] + ' version coming soon';
+      toast.style.opacity = '1';
+      clearTimeout(window._langToastTimer);
+      window._langToastTimer = setTimeout(function() {
+        toast.style.opacity = '0';
+        setTimeout(function() { document.querySelectorAll('.lang-btn').forEach(function(b) { b.classList.remove('on'); }); document.querySelector('.lang-btn').classList.add('on'); }, 300);
+      }, 2500);
+    }
+  });
   el.classList.add('on');
   // var paths = { en: '/acquisitions/', es: '/es/acquisitions/', fr: '/fr/acquisitions/', pt: '/pt/acquisitions/' };
   // if (lang !== 'en' && paths[lang]) window.location.pathname = paths[lang];
