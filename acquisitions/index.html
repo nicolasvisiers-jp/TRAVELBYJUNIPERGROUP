@@ -1412,43 +1412,38 @@ function toggleFaq(el) {
 
 // LANGUAGE SWITCHER
 function switchLang(lang, el) {
-    document.querySelectorAll('.lang-btn').forEach(function(b) { b.classList.remove('on'); });
-    el.classList.add('on');
-    // Build localized path
-    var path = window.location.pathname;
-    var base = '/TRAVELBYJUNIPERGROUP';
-    // Strip existing lang prefix if present
-    var langPrefixes = ['/es/', '/fr/', '/pt/'];
-    var stripped = path;
-    for (var i = 0; i < langPrefixes.length; i++) {
-      var lp = base + langPrefixes[i];
-      if (path.startsWith(lp)) {
-        stripped = base + '/' + path.slice(lp.length);
-        break;
-      }
-    }
-    // For non-English: show "coming soon" toast (pages not yet translated)
-    if (lang !== 'en') {
-      var toast = document.getElementById('lang-toast');
-      if (!toast) {
-        toast = document.createElement('div');
-        toast.id = 'lang-toast';
-        toast.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#0A0E1A;color:#fff;padding:12px 24px;border-radius:8px;font-size:14px;z-index:9999;box-shadow:0 4px 20px rgba(0,0,0,0.3);transition:opacity 0.3s';
-        document.body.appendChild(toast);
-      }
-      var langNames = { es: 'Español', fr: 'Français', pt: 'Português' };
-      toast.textContent = langNames[lang] + ' version coming soon';
-      toast.style.opacity = '1';
-      clearTimeout(window._langToastTimer);
-      window._langToastTimer = setTimeout(function() {
-        toast.style.opacity = '0';
-        setTimeout(function() { document.querySelectorAll('.lang-btn').forEach(function(b) { b.classList.remove('on'); }); document.querySelector('.lang-btn').classList.add('on'); }, 300);
-      }, 2500);
-    }
-  });
+  document.querySelectorAll('.lang-btn').forEach(function(b) { b.classList.remove('on'); });
   el.classList.add('on');
-  // var paths = { en: '/acquisitions/', es: '/es/acquisitions/', fr: '/fr/acquisitions/', pt: '/pt/acquisitions/' };
-  // if (lang !== 'en' && paths[lang]) window.location.pathname = paths[lang];
+  if (lang !== 'en') {
+    var toast = document.getElementById('lang-toast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'lang-toast';
+      toast.style.cssText = [
+        'position:fixed','bottom:28px','left:50%','transform:translateX(-50%)',
+        'background:#0A0E1A','color:#fff','padding:13px 28px',
+        'border-radius:10px','font-size:14px','font-weight:600',
+        'z-index:9999','box-shadow:0 4px 24px rgba(0,0,0,0.35)',
+        'opacity:0','transition:opacity 0.25s ease',
+        'white-space:nowrap','pointer-events:none'
+      ].join(';');
+      document.body.appendChild(toast);
+    }
+    var names = { es: 'Español', fr: 'Français', pt: 'Português' };
+    toast.textContent = '🌐 ' + names[lang] + ' version coming soon';
+    // Force reflow then fade in
+    toast.offsetHeight;
+    toast.style.opacity = '1';
+    clearTimeout(window._lt);
+    window._lt = setTimeout(function() {
+      toast.style.opacity = '0';
+      setTimeout(function() {
+        document.querySelectorAll('.lang-btn').forEach(function(b) { b.classList.remove('on'); });
+        var first = document.querySelector('.lang-btn');
+        if (first) first.classList.add('on');
+      }, 300);
+    }, 2800);
+  }
 }
 
 // SCROLL REVEAL

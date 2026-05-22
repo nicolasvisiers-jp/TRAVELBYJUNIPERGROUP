@@ -867,7 +867,7 @@
   </div>
 </footer>
 <script>
-function switchLang(lang,el){document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('on'));el.classList.add('on');}
+function switchLang(lang,el){document.querySelectorAll('.lang-btn').forEach(function(b){b.classList.remove('on');});el.classList.add('on');if(lang!=='en'){var t=document.getElementById('lang-toast');if(!t){t=document.createElement('div');t.id='lang-toast';t.style.cssText='position:fixed;bottom:28px;left:50%;transform:translateX(-50%);background:#0A0E1A;color:#fff;padding:13px 28px;border-radius:10px;font-size:14px;font-weight:600;z-index:9999;box-shadow:0 4px 24px rgba(0,0,0,0.35);opacity:0;transition:opacity 0.25s ease;white-space:nowrap;pointer-events:none';document.body.appendChild(t);}var n={es:'Español',fr:'Français',pt:'Português'};t.textContent='🌐 '+n[lang]+' version coming soon';t.offsetHeight;t.style.opacity='1';clearTimeout(window._lt);window._lt=setTimeout(function(){t.style.opacity='0';setTimeout(function(){document.querySelectorAll('.lang-btn').forEach(function(b){b.classList.remove('on');});var f=document.querySelector('.lang-btn');if(f)f.classList.add('on');},300);},2800);}}
 const rvEls=document.querySelectorAll('.rv');
 const rvObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');rvObs.unobserve(e.target);}});},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
 rvEls.forEach(el=>rvObs.observe(el));
