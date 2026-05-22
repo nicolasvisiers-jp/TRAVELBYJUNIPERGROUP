@@ -233,7 +233,7 @@
 
     /* ===== HERO ===== */
     .hero {
-      position:relative; min-height:100vh; display:flex; align-items:center;
+      position:relative; min-height:52vh; display:flex; align-items:center;
       padding:64px 32px 0; overflow:hidden;
     }
     #hero-canvas { position:absolute; inset:0; z-index:0; }
@@ -241,7 +241,7 @@
       position:absolute; inset:0; z-index:1;
       background:radial-gradient(ellipse 80% 60% at 60% 40%, transparent 30%, var(--bg-dark) 80%);
     }
-    .hero-c { position:relative; z-index:2; max-width:var(--max); margin:0 auto; width:100%; padding:88px 0 64px; }
+    .hero-c { position:relative; z-index:2; max-width:var(--max); margin:0 auto; width:100%; padding:56px 0 40px; }
     .breadcrumb {
       display:flex; align-items:center; gap:8px;
       font-size:.68rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase;
@@ -475,6 +475,22 @@
     .scroll-line span { font-size:.62rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); }
     .scroll-dot { width:1px; height:40px; background:linear-gradient(to bottom, var(--border), transparent); }
   
+    
+    /* === LOGO CHAIN === */
+    .chain-wrap { background: var(--bg-dark) !important; border-color: transparent !important; padding: 32px 0; }
+    .chain-nodes { justify-content: center; flex-wrap: wrap; gap: 12px; }
+    .chain-node { background: rgba(255,255,255,0.06) !important; border-color: rgba(255,255,255,0.12) !important; text-align:center; }
+    .chain-node:hover { background: rgba(255,255,255,0.10) !important; border-color: rgba(255,255,255,0.22) !important; }
+    .chain-node.active { background: rgba(192,57,43,0.2) !important; border-color: rgba(192,57,43,0.5) !important; }
+    .chain-node-name { color: #F1F5F9 !important; }
+    .chain-node-sub { color: rgba(255,255,255,0.45) !important; }
+    .chain-node-link { color: var(--red) !important; }
+    .chain-arrow { color: rgba(255,255,255,0.2) !important; }
+    .chain-logo { height: 36px; width: auto; max-width: 120px; object-fit: contain; margin-bottom: 8px; display: block; margin-left: auto; margin-right: auto; }
+    .footer-chain-bar { flex-wrap: wrap; gap: 6px; align-items: center; }
+    .footer-logo { height: 22px; width: auto; object-fit: contain; vertical-align: middle; opacity: 0.7; margin: 0 2px; }
+    .footer-logo:hover { opacity: 1; }
+
     /* === LIGHT THEME OVERRIDES === */
     /* Remove dark grid bg */
     body::before { display: none !important; }
