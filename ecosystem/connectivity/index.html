@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Connectivity Infrastructure | Travel by Juniper Group</title>
+  <meta name="description" content="API infrastructure, GDS integration, NDC pipelines and middleware — the plumbing that makes disparate travel systems communicate.">
+  <link rel="canonical" href="https://travel.juniper-group.com/ecosystem/connectivity/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Travel by Juniper Group">
+  <meta property="og:title" content="Travel Connectivity Infrastructure | Travel by Juniper Group">
+  <meta property="og:description" content="API infrastructure, GDS integration, NDC pipelines and middleware — the plumbing that makes disparate travel systems communicate.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+  :root{--bg:#080C18;--bg-nav:rgba(8,12,24,0.88);--bg-card:rgba(255,255,255,0.04);--bg-hover:rgba(255,255,255,0.07);--red:#C0392B;--red-dim:rgba(192,57,43,0.15);--red-glow:rgba(192,57,43,0.3);--amber:#E8A87C;--text:#F1F5F9;--mid:#94A3B8;--dim:#64748B;--border:rgba(255,255,255,0.08);--border-hi:rgba(255,255,255,0.16);--font:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,sans-serif;--radius:12px;--max:1560px;}
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:var(--font);-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden;}
+  body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);background-size:64px 64px;}
+  .nav{position:fixed;top:0;left:0;right:0;z-index:200;height:64px;padding:0 32px;display:flex;align-items:center;justify-content:space-between;background:var(--bg-nav);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+  .nav-left{display:flex;align-items:center;}
+  .nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;}
+  .nav-mark{width:34px;height:34px;border-radius:8px;background:var(--red-dim);border:1px solid rgba(192,57,43,0.35);display:flex;align-items:center;justify-content:center;}
+  .nav-mark svg{width:20px;height:20px;}
+  .nav-name{font-size:.85rem;font-weight:800;color:#fff;letter-spacing:-.01em;}
+  .nav-sub{font-size:.55rem;font-weight:600;color:var(--dim);letter-spacing:.1em;text-transform:uppercase;margin-top:1px;}
+  .nav-divider{width:1px;height:28px;background:var(--border);margin:0 20px;}
+  .nav-label{font-size:.68rem;font-weight:600;color:var(--dim);letter-spacing:.1em;text-transform:uppercase;}
+  .nav-links{display:flex;align-items:center;gap:2px;list-style:none;}
+  .nav-links>li{position:relative;}
+  .nav-links a{display:flex;align-items:center;gap:4px;color:var(--mid);text-decoration:none;font-size:.8rem;font-weight:500;padding:8px 14px;border-radius:6px;transition:all .18s;white-space:nowrap;}
+  .nav-links a:hover{color:var(--text);background:var(--bg-card);}
+  .nav-links a.on{color:var(--red);}
+  .dropdown-menu{display:none;position:absolute;top:calc(100% + 8px);left:0;background:#0D1220;border:1px solid var(--border);border-radius:10px;padding:6px;min-width:220px;box-shadow:0 24px 60px rgba(0,0,0,.6);z-index:300;}
+  .dropdown-menu a{display:block;padding:8px 12px;font-size:.78rem;color:var(--mid);border-radius:6px;}
+  .dropdown-menu a:hover{background:var(--bg-card);color:var(--text);}
+  .nav-links li:hover .dropdown-menu{display:block;}
+  .nav-right{display:flex;align-items:center;gap:10px;}
+  .lang-bar{display:flex;gap:3px;}
+  .lang-btn{background:none;border:1px solid var(--border);color:var(--dim);font-size:.68rem;font-weight:700;padding:4px 9px;border-radius:4px;cursor:pointer;font-family:var(--font);transition:all .15s;}
+  .lang-btn:hover,.lang-btn.on{border-color:var(--red);color:var(--red);}
+  .nav-cta{background:var(--red);color:#fff;text-decoration:none;font-size:.78rem;font-weight:700;padding:8px 18px;border-radius:6px;transition:all .18s;}
+  .nav-cta:hover{background:#a93226;transform:translateY(-1px);box-shadow:0 6px 20px var(--red-glow);}
+  section{position:relative;z-index:1;}
+  .si{max-width:var(--max);margin:0 auto;padding:80px 32px;}
+  .page-hero{padding:120px 32px 64px;position:relative;z-index:1;}
+  .page-hero-inner{max-width:var(--max);margin:0 auto;}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:28px;flex-wrap:wrap;}
+  .breadcrumb a{color:var(--dim);text-decoration:none;transition:color .15s;}
+  .breadcrumb a:hover{color:var(--mid);}
+  .breadcrumb .sep{color:var(--border);}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid;color:var(--amber);font-size:.72rem;font-weight:700;padding:6px 16px;border-radius:100px;margin-bottom:24px;letter-spacing:.07em;text-transform:uppercase;}
+  .s-label{display:block;font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--red);margin-bottom:10px;}
+  .s-title{font-size:clamp(1.8rem,3vw,2.8rem);font-weight:800;letter-spacing:-.025em;line-height:1.08;margin-bottom:16px;}
+  .s-desc{font-size:.95rem;color:var(--mid);max-width:600px;line-height:1.72;}
+  .btn-p{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#fff;text-decoration:none;font-size:.88rem;font-weight:700;padding:14px 28px;border-radius:8px;transition:all .2s;}
+  .btn-p:hover{background:#a93226;transform:translateY(-2px);box-shadow:0 10px 32px var(--red-glow);}
+  .btn-s{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--text);text-decoration:none;font-size:.88rem;font-weight:600;padding:14px 28px;border-radius:8px;border:1px solid var(--border);transition:all .2s;}
+  .btn-s:hover{border-color:var(--border-hi);background:var(--bg-card);transform:translateY(-2px);}
+  .co-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .co-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;text-decoration:none;color:inherit;transition:all .25s;display:block;}
+  .co-card:hover{border-color:var(--border-hi);background:var(--bg-hover);transform:translateY(-3px);box-shadow:0 18px 44px rgba(0,0,0,.45);}
+  .co-logo{width:46px;height:46px;background:var(--red-dim);border:1px solid rgba(192,57,43,.3);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:800;color:var(--red);margin-bottom:14px;}
+  .co-name{font-size:1rem;font-weight:700;margin-bottom:4px;}
+  .co-loc{font-size:.75rem;color:var(--dim);margin-bottom:10px;}
+  .co-desc{font-size:.8rem;color:var(--mid);line-height:1.6;margin-bottom:14px;}
+  .layer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:32px;}
+  .layer-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;text-decoration:none;color:inherit;transition:all .22s;display:block;}
+  .layer-card:hover{border-color:var(--border-hi);background:var(--bg-hover);transform:translateY(-2px);}
+  .layer-card.active{border-color:rgba(192,57,43,.5);background:var(--red-dim);}
+  .layer-icon{font-size:1.5rem;margin-bottom:8px;}
+  .layer-name{font-size:.88rem;font-weight:700;margin-bottom:4px;}
+  .layer-count{font-size:.7rem;color:var(--dim);}
+  .rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease;}
+  .rv.vis{opacity:1;transform:translateY(0);}
+  .footer{border-top:1px solid var(--border);padding:60px 32px 32px;}
+  .footer-inner{max-width:var(--max);margin:0 auto;}
+  .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid var(--border);margin-bottom:28px;}
+  .footer-brand p{font-size:.8rem;color:var(--mid);line-height:1.7;margin-top:14px;max-width:300px;}
+  .footer-links{margin-top:18px;display:flex;gap:8px;flex-wrap:wrap;}
+  .footer-badge{font-size:.7rem;color:var(--dim);text-decoration:none;border:1px solid var(--border);padding:3px 10px;border-radius:4px;transition:all .15s;}
+  .footer-badge:hover{color:var(--mid);border-color:var(--border-hi);}
+  .footer-col h4{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;}
+  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:7px;}
+  .footer-col a{color:var(--mid);text-decoration:none;font-size:.78rem;transition:color .15s;}
+  .footer-col a:hover{color:var(--text);}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+  .footer-chain-bar{display:flex;align-items:center;gap:8px;font-size:.72rem;color:var(--dim);}
+  .footer-chain-bar a{color:var(--dim);text-decoration:none;}
+  .footer-chain-bar a:hover{color:var(--mid);}
+  .footer-chain-bar .sep{color:var(--border);}
+  .footer-copy{font-size:.72rem;color:var(--dim);}
+  .footer-copy a{color:var(--dim);text-decoration:none;}
+  @media(max-width:1100px){.co-grid{grid-template-columns:repeat(2,1fr);}.layer-grid{grid-template-columns:repeat(2,1fr);}.footer-top{grid-template-columns:1fr 1fr;gap:36px;}}
+  @media(max-width:768px){.nav-links,.nav-divider,.nav-label{display:none;}.nav{padding:0 20px;}.page-hero{padding:90px 20px 40px;}.si{padding:56px 20px;}.co-grid{grid-template-columns:1fr;}.layer-grid{grid-template-columns:1fr 1fr;}.footer-top{grid-template-columns:1fr;gap:28px;}.footer-bottom{flex-direction:column;align-items:flex-start;}}
+  @media(max-width:480px){.lang-bar{display:none;}.layer-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-left">
+    <a class="nav-brand" href="/TRAVELBYJUNIPERGROUP/" aria-label="Travel by Juniper Group Home">
+      <div class="nav-mark" aria-hidden="true">
+        <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" fill="rgba(192,57,43,0.2)" stroke="rgba(192,57,43,0.5)" stroke-width="1"/><path d="M10 3C13.5 5.5 15 9 13.5 12.5C12 16 8 16.5 5.5 13C3 9.5 5.5 4.5 8 3.5" stroke="#E8A87C" stroke-width="1.2" stroke-linecap="round" fill="none"/><circle cx="10" cy="10" r="2.2" fill="#C0392B"/></svg>
+      </div>
+      <div>
+        <div class="nav-name">Travel by Juniper Group</div>
+        <div class="nav-sub">A Vela Software Company</div>
+      </div>
+    </a>
+    <div class="nav-divider" aria-hidden="true"></div>
+    <span class="nav-label">Vela Software · CSI Company</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="/TRAVELBYJUNIPERGROUP/">Home</a></li>
+    <li><a href="/TRAVELBYJUNIPERGROUP/companies/">Our Companies ▾</a>
+      <div class="dropdown-menu" role="menu">
+        <a href="/TRAVELBYJUNIPERGROUP/companies/juniper-travel-technology/">Juniper Travel Technology</a>
+        <a href="/TRAVELBYJUNIPERGROUP/companies/peakwork/">Peakwork</a>
+        <a href="/TRAVELBYJUNIPERGROUP/companies/cangooroo/">Cangooroo</a>
+        <a href="/TRAVELBYJUNIPERGROUP/companies/vervotech/">Vervotech</a>
+        <a href="/TRAVELBYJUNIPERGROUP/companies/ist/">IST</a>
+        <a href="/TRAVELBYJUNIPERGROUP/companies/roibos/">Roibos</a>
+        <a href="/TRAVELBYJUNIPERGROUP/companies/alturos/">Alturos</a>
+        <a href="/TRAVELBYJUNIPERGROUP/companies/lleego/">Lleego</a>
+        <a href="/TRAVELBYJUNIPERGROUP/companies/traveltek/">Traveltek</a>
+        <a href="/TRAVELBYJUNIPERGROUP/companies/dome/">Dome</a>
+        <a href="/TRAVELBYJUNIPERGROUP/companies/hotetec/">Hotetec</a>
+        <a href="/TRAVELBYJUNIPERGROUP/companies/interes/">InteRES</a>
+        <a href="/TRAVELBYJUNIPERGROUP/companies/rezmagic/">RezMagic</a>
+        <a href="/TRAVELBYJUNIPERGROUP/companies/inspiretec/">Inspiretec</a>
+      </div>
+    </li>
+    <li><a href="/TRAVELBYJUNIPERGROUP/ecosystem/" class="on">Ecosystem ▾</a>
+      <div class="dropdown-menu" role="menu">
+        <a href="/TRAVELBYJUNIPERGROUP/ecosystem/">Ecosystem Overview</a>
+        <a href="/TRAVELBYJUNIPERGROUP/ecosystem/distribution/">Distribution</a>
+        <a href="/TRAVELBYJUNIPERGROUP/ecosystem/connectivity/">Connectivity</a>
+        <a href="/TRAVELBYJUNIPERGROUP/ecosystem/hospitality/">Hospitality &amp; Hotels</a>
+        <a href="/TRAVELBYJUNIPERGROUP/ecosystem/cruise/">Cruise</a>
+        <a href="/TRAVELBYJUNIPERGROUP/ecosystem/air-mobility/">Air &amp; Mobility</a>
+        <a href="/TRAVELBYJUNIPERGROUP/ecosystem/destination-tech/">Destination Tech</a>
+        <a href="/TRAVELBYJUNIPERGROUP/ecosystem/ai-data/">AI &amp; Data</a>
+        <a href="/TRAVELBYJUNIPERGROUP/ecosystem/agency-tech/">Agency Technology</a>
+      </div>
+    </li>
+    <li><a href="/TRAVELBYJUNIPERGROUP/insights/">Insights ▾</a>
+      <div class="dropdown-menu" role="menu">
+        <a href="/TRAVELBYJUNIPERGROUP/insights/">Knowledge Center</a>
+        <a href="/TRAVELBYJUNIPERGROUP/insights/travel-distribution/">Travel Distribution</a>
+        <a href="/TRAVELBYJUNIPERGROUP/insights/hotel-connectivity/">Hotel Connectivity</a>
+        <a href="/TRAVELBYJUNIPERGROUP/insights/ai-in-travel/">AI in Travel</a>
+        <a href="/TRAVELBYJUNIPERGROUP/insights/ndc-airlines/">NDC &amp; Airlines</a>
+        <a href="/TRAVELBYJUNIPERGROUP/insights/travel-payments/">Travel Payments</a>
+        <a href="/TRAVELBYJUNIPERGROUP/insights/cruise-technology/">Cruise Technology</a>
+      </div>
+    </li>
+    <li><a href="/TRAVELBYJUNIPERGROUP/acquisitions/">Acquisitions</a></li>
+    <li><a href="/TRAVELBYJUNIPERGROUP/about/">About</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-bar"><button class="lang-btn on" onclick="switchLang('en',this)">EN</button><button class="lang-btn" onclick="switchLang('es',this)">ES</button><button class="lang-btn" onclick="switchLang('fr',this)">FR</button><button class="lang-btn" onclick="switchLang('pt',this)">PT</button></div>
+    <a href="/TRAVELBYJUNIPERGROUP/acquisitions/" class="nav-cta">For Founders →</a>
+  </div>
+</nav>
+
+<div class="page-hero" style="background:linear-gradient(135deg,rgba(139,92,246,0.08) 0%,transparent 60%);">
+  <div class="page-hero-inner">
+    <nav class="breadcrumb">
+      <a href="/TRAVELBYJUNIPERGROUP/">Travel by Juniper Group</a><span class="sep">›</span>
+      <a href="/TRAVELBYJUNIPERGROUP/ecosystem/">Ecosystem</a><span class="sep">›</span>
+      <span>Connectivity</span>
+    </nav>
+    <div class="eyebrow" style="background:rgba(139,92,246,0.12);border-color:#8B5CF644;color:#8B5CF6;">📡 Ecosystem Layer</div>
+    <h1 style="font-size:clamp(2.2rem,4vw,3.6rem);font-weight:800;letter-spacing:-.03em;line-height:1.06;max-width:760px;margin-bottom:18px;">Travel Connectivity Infrastructure</h1>
+    <p style="font-size:1rem;color:var(--mid);max-width:620px;line-height:1.72;margin-bottom:36px;">Connectivity is the invisible layer that makes travel distribution work. Without reliable, high-performance connectivity between suppliers, aggregators, and sellers, no booking can complete. The companies in this layer build and operate that infrastructure.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+      <a href="/TRAVELBYJUNIPERGROUP/companies/" class="btn-p">All Companies →</a>
+      <a href="/TRAVELBYJUNIPERGROUP/ecosystem/" class="btn-s">Ecosystem Overview</a>
+    </div>
+  </div>
+</div>
+
+<section style="border-top:1px solid var(--border);">
+  <div class="si">
+    <div class="sh rv">
+      <span class="s-label">Companies in this Layer</span>
+      <h2 class="s-title">Connectivity Companies</h2>
+      <p class="s-desc">4 companies specialise in this ecosystem layer within Travel by Juniper Group.</p>
+    </div>
+    <div class="co-grid">
+      <a href="/TRAVELBYJUNIPERGROUP/companies/ist/" class="co-card rv">
+  <div class="co-logo">IST</div>
+  <div class="co-name">IST</div>
+  <div class="co-loc">📍 Barcelona, Spain</div>
+  <div class="co-desc">Cruise connectivity and distribution infrastructure serving cruise lines and travel agents worldwide.</div>
+  <div style="font-size:.75rem;color:var(--red);font-weight:600;">View company →</div>
+</a><a href="/TRAVELBYJUNIPERGROUP/companies/hotetec/" class="co-card rv">
+  <div class="co-logo">HTC</div>
+  <div class="co-name">Hotetec</div>
+  <div class="co-loc">📍 Palma, Spain</div>
+  <div class="co-desc">Hotel channel management and connectivity platform linking hotels to 100+ global distribution channels.</div>
+  <div style="font-size:.75rem;color:var(--red);font-weight:600;">View company →</div>
+</a><a href="/TRAVELBYJUNIPERGROUP/companies/interes/" class="co-card rv">
+  <div class="co-logo">INT</div>
+  <div class="co-name">InteRES</div>
+  <div class="co-loc">📍 Darmstadt, Germany</div>
+  <div class="co-desc">Air content aggregation and GDS connectivity infrastructure for airlines and travel retailers since 1997.</div>
+  <div style="font-size:.75rem;color:var(--red);font-weight:600;">View company →</div>
+</a><a href="/TRAVELBYJUNIPERGROUP/companies/roibos/" class="co-card rv">
+  <div class="co-logo">ROI</div>
+  <div class="co-name">Roibos</div>
+  <div class="co-loc">📍 Palma, Spain</div>
+  <div class="co-desc">Hotel B2B marketplace enabling direct-connect distribution between hotels and travel buyers.</div>
+  <div style="font-size:.75rem;color:var(--red);font-weight:600;">View company →</div>
+</a>
+    </div>
+  </div>
+</section>
+
+<section style="border-top:1px solid var(--border);background:rgba(255,255,255,.01);">
+  <div class="si">
+    <div class="sh rv">
+      <span class="s-label">Explore the Full Ecosystem</span>
+      <h2 class="s-title">All 8 Layers</h2>
+      <p class="s-desc">Travel by Juniper Group covers the complete travel technology value chain across 8 interconnected layers.</p>
+    </div>
+    <div class="layer-grid">
+      <a href="/TRAVELBYJUNIPERGROUP/ecosystem/distribution/" class="layer-card ">
+  <div class="layer-icon">🔗</div>
+  <div class="layer-name">Distribution</div>
+  <div class="layer-count">5 companies</div>
+</a><a href="/TRAVELBYJUNIPERGROUP/ecosystem/connectivity/" class="layer-card active">
+  <div class="layer-icon">📡</div>
+  <div class="layer-name">Connectivity</div>
+  <div class="layer-count">4 companies</div>
+</a><a href="/TRAVELBYJUNIPERGROUP/ecosystem/hospitality/" class="layer-card ">
+  <div class="layer-icon">🏨</div>
+  <div class="layer-name">Hospitality</div>
+  <div class="layer-count">2 companies</div>
+</a><a href="/TRAVELBYJUNIPERGROUP/ecosystem/cruise/" class="layer-card ">
+  <div class="layer-icon">🚢</div>
+  <div class="layer-name">Cruise</div>
+  <div class="layer-count">3 companies</div>
+</a><a href="/TRAVELBYJUNIPERGROUP/ecosystem/air-mobility/" class="layer-card ">
+  <div class="layer-icon">✈️</div>
+  <div class="layer-name">Air & Mobility</div>
+  <div class="layer-count">2 companies</div>
+</a><a href="/TRAVELBYJUNIPERGROUP/ecosystem/destination-tech/" class="layer-card ">
+  <div class="layer-icon">🗺️</div>
+  <div class="layer-name">Destination Tech</div>
+  <div class="layer-count">2 companies</div>
+</a><a href="/TRAVELBYJUNIPERGROUP/ecosystem/ai-data/" class="layer-card ">
+  <div class="layer-icon">🤖</div>
+  <div class="layer-name">AI & Data</div>
+  <div class="layer-count">1 company</div>
+</a><a href="/TRAVELBYJUNIPERGROUP/ecosystem/agency-tech/" class="layer-card ">
+  <div class="layer-icon">🏢</div>
+  <div class="layer-name">Agency Tech</div>
+  <div class="layer-count">2 companies</div>
+</a>
+    </div>
+  </div>
+</section>
+
+<section style="border-top:1px solid var(--border);">
+  <div class="si rv" style="max-width:800px;">
+    <span class="s-label">Related Insights</span>
+    <h2 class="s-title" style="font-size:1.8rem;">Deepen Your Knowledge</h2>
+    <p class="s-desc" style="margin-bottom:24px;">Expert guides on the technology powering this ecosystem layer.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;"><a href="/TRAVELBYJUNIPERGROUP/insights/hotel-connectivity/" class="btn-s" style="font-size:.8rem;padding:10px 20px;">Hotel Connectivity Guide →</a>
+<a href="/TRAVELBYJUNIPERGROUP/insights/ndc-airlines/" class="btn-s" style="font-size:.8rem;padding:10px 20px;">NDC & Airlines →</a>
+</div>
+  </div>
+</section>
+
+<section style="border-top:1px solid var(--border);background:linear-gradient(135deg,rgba(192,57,43,.12) 0%,transparent 55%);">
+  <div class="si" style="text-align:center;">
+    <span class="s-label">For Founders</span>
+    <h2 class="s-title">Building in Connectivity?</h2>
+    <p class="s-desc" style="margin:0 auto 32px;max-width:500px;">If you've built a vertical market software business in this space and are considering your next chapter, we'd love to talk.</p>
+    <a href="/TRAVELBYJUNIPERGROUP/acquisitions/" class="btn-p">Learn About Acquisitions →</a>
+  </div>
+</section>
+
+<footer class="footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+          <div class="nav-mark"><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" fill="rgba(192,57,43,0.2)" stroke="rgba(192,57,43,0.5)" stroke-width="1"/><path d="M10 3C13.5 5.5 15 9 13.5 12.5C12 16 8 16.5 5.5 13C3 9.5 5.5 4.5 8 3.5" stroke="#E8A87C" stroke-width="1.2" stroke-linecap="round" fill="none"/><circle cx="10" cy="10" r="2.2" fill="#C0392B"/></svg></div>
+          <div><div class="nav-name">Travel by Juniper Group</div><div class="nav-sub">A Vela Software Company</div></div>
+        </div>
+        <p>A global ecosystem of 14+ vertical market travel technology companies. Part of Vela Software, a Constellation Software company (TSX: CSU).</p>
+        <div class="footer-links">
+          <a href="https://www.velasoftware.com/" target="_blank" rel="noopener" class="footer-badge">Vela Software</a>
+          <a href="https://www.csisoftware.com/" target="_blank" rel="noopener" class="footer-badge">Constellation Software</a>
+          <a href="https://www.juniper-group.com/" target="_blank" rel="noopener" class="footer-badge">Juniper Group</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Companies</h4><ul>
+        <li><a href="/TRAVELBYJUNIPERGROUP/companies/juniper-travel-technology/">Juniper Travel Technology</a></li>
+        <li><a href="/TRAVELBYJUNIPERGROUP/companies/peakwork/">Peakwork</a></li>
+        <li><a href="/TRAVELBYJUNIPERGROUP/companies/cangooroo/">Cangooroo</a></li>
+        <li><a href="/TRAVELBYJUNIPERGROUP/companies/vervotech/">Vervotech</a></li>
+        <li><a href="/TRAVELBYJUNIPERGROUP/companies/">View all 14 →</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Ecosystem</h4><ul>
+        <li><a href="/TRAVELBYJUNIPERGROUP/ecosystem/distribution/">Distribution</a></li>
+        <li><a href="/TRAVELBYJUNIPERGROUP/ecosystem/connectivity/">Connectivity</a></li>
+        <li><a href="/TRAVELBYJUNIPERGROUP/ecosystem/hospitality/">Hospitality</a></li>
+        <li><a href="/TRAVELBYJUNIPERGROUP/ecosystem/cruise/">Cruise</a></li>
+        <li><a href="/TRAVELBYJUNIPERGROUP/ecosystem/ai-data/">AI &amp; Data</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Insights</h4><ul>
+        <li><a href="/TRAVELBYJUNIPERGROUP/insights/travel-distribution/">Travel Distribution</a></li>
+        <li><a href="/TRAVELBYJUNIPERGROUP/insights/hotel-connectivity/">Hotel Connectivity</a></li>
+        <li><a href="/TRAVELBYJUNIPERGROUP/insights/ai-in-travel/">AI in Travel</a></li>
+        <li><a href="/TRAVELBYJUNIPERGROUP/insights/ndc-airlines/">NDC &amp; Airlines</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Company</h4><ul>
+        <li><a href="/TRAVELBYJUNIPERGROUP/about/">About</a></li>
+        <li><a href="/TRAVELBYJUNIPERGROUP/acquisitions/">For Founders</a></li>
+        <li><a href="https://www.velasoftware.com/" target="_blank" rel="noopener">Vela Software</a></li>
+        <li><a href="https://www.csisoftware.com/" target="_blank" rel="noopener">Constellation Software</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-chain-bar"><a href="/TRAVELBYJUNIPERGROUP/">Travel by Juniper Group</a><span class="sep">→</span><a href="https://www.velasoftware.com/" target="_blank" rel="noopener">Vela Software</a><span class="sep">→</span><a href="https://www.csisoftware.com/" target="_blank" rel="noopener">Constellation Software (TSX: CSU)</a></div>
+      <div class="footer-copy">© 2025 Travel by Juniper Group. <a href="/TRAVELBYJUNIPERGROUP/about/">Global Travel Tech Ecosystem.</a></div>
+    </div>
+  </div>
+</footer>
+<script>
+function switchLang(l,el){document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('on'));el.classList.add('on');}
+const rvEls=document.querySelectorAll('.rv');
+const rvObs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis');rvObs.unobserve(x.target);}});},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+rvEls.forEach(el=>rvObs.observe(el));
+</script>
+</body>
+</html>
