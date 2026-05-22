@@ -524,34 +524,39 @@
     /* scrolled nav */
     body { padding-top: 68px; }
 
+    
+    .co-logo-svg { margin-bottom: 20px; }
+    .co-logo-svg svg { max-height: 56px; width: auto; }
+    @media (prefers-color-scheme: dark) { .co-logo-svg svg text { fill: #fff !important; } }
+
     </style>
 </head>
 <body>
 <nav class="nav" role="navigation" aria-label="Main navigation">
   <div class="nav-left">
     <a class="nav-brand" href="/TRAVELBYJUNIPERGROUP/" aria-label="Travel by Juniper Group Home">
-      <div class="nav-mark" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Juniper Group">
-  <circle cx="18" cy="18" r="17" fill="#0A0E1A"/>
-  <!-- Globe segments -->
-  <!-- Red segment top-left -->
-  <path d="M18 1 C9 1 2 8 2 18 C2 11 9 4 18 4 Z" fill="#C0392B" opacity="0.9"/>
-  <path d="M2 18 C2 11 9 4 18 4 C12 6 7 11 6 18 Z" fill="#C0392B"/>
-  <!-- Blue segment top-right -->
-  <path d="M18 1 C27 1 34 8 34 18 C34 11 27 4 18 4 Z" fill="#2563EB" opacity="0.9"/>
-  <path d="M34 18 C34 11 27 4 18 4 C24 6 29 11 30 18 Z" fill="#2563EB"/>
-  <!-- Green segment bottom-left -->
-  <path d="M2 18 C2 28 9 35 18 35 C12 33 7 28 6 18 Z" fill="#16A34A"/>
-  <path d="M18 35 C9 35 2 28 2 18 C4 24 8 30 14 33 Z" fill="#16A34A" opacity="0.8"/>
-  <!-- Teal segment bottom-right -->
-  <path d="M34 18 C34 28 27 35 18 35 C24 33 29 28 30 18 Z" fill="#0891B2"/>
-  <path d="M18 35 C27 35 34 28 34 18 C32 24 28 30 22 33 Z" fill="#0891B2" opacity="0.8"/>
-  <!-- Globe latitude lines -->
-  <ellipse cx="18" cy="18" rx="17" ry="6" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="0.7"/>
-  <ellipse cx="18" cy="18" rx="17" ry="11" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="0.7"/>
-  <!-- Globe longitude line -->
-  <ellipse cx="18" cy="18" rx="6" ry="17" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="0.7"/>
-  <!-- Outer ring -->
-  <circle cx="18" cy="18" r="17" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="0.8"/>
+      <div class="nav-mark" aria-hidden="true"><svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:36px;height:36px;flex-shrink:0">
+  <defs>
+    <radialGradient id="jg-rg" cx="35%" cy="20%" r="70%">
+      <stop offset="0%" stop-color="#EE2222"/>
+      <stop offset="100%" stop-color="#990000"/>
+    </radialGradient>
+    <linearGradient id="jg-bg" x1="5%" y1="15%" x2="95%" y2="85%">
+      <stop offset="0%" stop-color="#00DDFF"/>
+      <stop offset="45%" stop-color="#1A88EE"/>
+      <stop offset="100%" stop-color="#0044BB"/>
+    </linearGradient>
+    <radialGradient id="jg-gg" cx="60%" cy="80%" r="60%">
+      <stop offset="0%" stop-color="#CCFF33"/>
+      <stop offset="100%" stop-color="#22BB11"/>
+    </radialGradient>
+    <clipPath id="jg-cc">
+      <circle cx="50" cy="50" r="48"/>
+    </clipPath>
+  </defs>
+  <path clip-path="url(#jg-cc)" fill="url(#jg-rg)" d="M 50 2 A 48 48 0 0 1 98 50 L 78 42 Q 62 22 38 18 Q 18 15 5 34 A 48 48 0 0 1 50 2 Z"/>
+  <path clip-path="url(#jg-cc)" fill="url(#jg-bg)" d="M 5 34 Q 18 15 38 18 Q 62 22 78 42 L 98 50 A 48 48 0 0 1 88 76 L 68 66 Q 46 56 24 62 Q 8 66 4 58 Z"/>
+  <path clip-path="url(#jg-cc)" fill="url(#jg-gg)" d="M 4 58 Q 8 66 24 62 Q 46 56 68 66 L 88 76 A 48 48 0 0 1 50 98 A 48 48 0 0 1 4 58 Z"/>
 </svg></div>
       <div>
         <div class="nav-name">Travel by Juniper Group</div>
@@ -624,6 +629,20 @@
 
 <div class="page-hero">
   <div class="page-hero-inner">
+      <div class="co-logo-svg"><svg viewBox="0 0 140 50" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="jtt-rg" cx="35%" cy="20%" r="70%"><stop offset="0%" stop-color="#EE2222"/><stop offset="100%" stop-color="#990000"/></radialGradient>
+    <linearGradient id="jtt-bg" x1="5%" y1="15%" x2="95%" y2="85%"><stop offset="0%" stop-color="#00DDFF"/><stop offset="100%" stop-color="#0044BB"/></linearGradient>
+    <radialGradient id="jtt-gg" cx="60%" cy="80%" r="60%"><stop offset="0%" stop-color="#CCFF33"/><stop offset="100%" stop-color="#22BB11"/></radialGradient>
+    <clipPath id="jtt-cc"><circle cx="20" cy="25" r="18"/></clipPath>
+  </defs>
+  <path clip-path="url(#jtt-cc)" fill="url(#jtt-rg)" d="M20 7 A18 18 0 0 1 38 25 L30 21 Q24 12 14 11 Q8 10 4 17 A18 18 0 0 1 20 7Z"/>
+  <path clip-path="url(#jtt-cc)" fill="url(#jtt-bg)" d="M4 17 Q8 10 14 11 Q24 12 30 21 L38 25 A18 18 0 0 1 34 36 L26 31 Q18 27 10 30 Q5 31 3 27Z"/>
+  <path clip-path="url(#jtt-cc)" fill="url(#jtt-gg)" d="M3 27 Q5 31 10 30 Q18 27 26 31 L34 36 A18 18 0 0 1 20 43 A18 18 0 0 1 3 27Z"/>
+  <text x="44" y="22" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="#1F2937">Juniper</text>
+  <text x="44" y="36" font-family="Arial,sans-serif" font-size="10" font-weight="500" fill="#6B7280">Travel Technology</text>
+</svg></div>
+      
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="/TRAVELBYJUNIPERGROUP/">Travel by Juniper Group</a>
       <span class="sep">›</span>
@@ -769,28 +788,28 @@
     <div class="footer-top">
       <div class="footer-brand">
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
-          <div class="nav-mark" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Juniper Group">
-  <circle cx="18" cy="18" r="17" fill="#0A0E1A"/>
-  <!-- Globe segments -->
-  <!-- Red segment top-left -->
-  <path d="M18 1 C9 1 2 8 2 18 C2 11 9 4 18 4 Z" fill="#C0392B" opacity="0.9"/>
-  <path d="M2 18 C2 11 9 4 18 4 C12 6 7 11 6 18 Z" fill="#C0392B"/>
-  <!-- Blue segment top-right -->
-  <path d="M18 1 C27 1 34 8 34 18 C34 11 27 4 18 4 Z" fill="#2563EB" opacity="0.9"/>
-  <path d="M34 18 C34 11 27 4 18 4 C24 6 29 11 30 18 Z" fill="#2563EB"/>
-  <!-- Green segment bottom-left -->
-  <path d="M2 18 C2 28 9 35 18 35 C12 33 7 28 6 18 Z" fill="#16A34A"/>
-  <path d="M18 35 C9 35 2 28 2 18 C4 24 8 30 14 33 Z" fill="#16A34A" opacity="0.8"/>
-  <!-- Teal segment bottom-right -->
-  <path d="M34 18 C34 28 27 35 18 35 C24 33 29 28 30 18 Z" fill="#0891B2"/>
-  <path d="M18 35 C27 35 34 28 34 18 C32 24 28 30 22 33 Z" fill="#0891B2" opacity="0.8"/>
-  <!-- Globe latitude lines -->
-  <ellipse cx="18" cy="18" rx="17" ry="6" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="0.7"/>
-  <ellipse cx="18" cy="18" rx="17" ry="11" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="0.7"/>
-  <!-- Globe longitude line -->
-  <ellipse cx="18" cy="18" rx="6" ry="17" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="0.7"/>
-  <!-- Outer ring -->
-  <circle cx="18" cy="18" r="17" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="0.8"/>
+          <div class="nav-mark" aria-hidden="true"><svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:36px;height:36px;flex-shrink:0">
+  <defs>
+    <radialGradient id="jg-rg" cx="35%" cy="20%" r="70%">
+      <stop offset="0%" stop-color="#EE2222"/>
+      <stop offset="100%" stop-color="#990000"/>
+    </radialGradient>
+    <linearGradient id="jg-bg" x1="5%" y1="15%" x2="95%" y2="85%">
+      <stop offset="0%" stop-color="#00DDFF"/>
+      <stop offset="45%" stop-color="#1A88EE"/>
+      <stop offset="100%" stop-color="#0044BB"/>
+    </linearGradient>
+    <radialGradient id="jg-gg" cx="60%" cy="80%" r="60%">
+      <stop offset="0%" stop-color="#CCFF33"/>
+      <stop offset="100%" stop-color="#22BB11"/>
+    </radialGradient>
+    <clipPath id="jg-cc">
+      <circle cx="50" cy="50" r="48"/>
+    </clipPath>
+  </defs>
+  <path clip-path="url(#jg-cc)" fill="url(#jg-rg)" d="M 50 2 A 48 48 0 0 1 98 50 L 78 42 Q 62 22 38 18 Q 18 15 5 34 A 48 48 0 0 1 50 2 Z"/>
+  <path clip-path="url(#jg-cc)" fill="url(#jg-bg)" d="M 5 34 Q 18 15 38 18 Q 62 22 78 42 L 98 50 A 48 48 0 0 1 88 76 L 68 66 Q 46 56 24 62 Q 8 66 4 58 Z"/>
+  <path clip-path="url(#jg-cc)" fill="url(#jg-gg)" d="M 4 58 Q 8 66 24 62 Q 46 56 68 66 L 88 76 A 48 48 0 0 1 50 98 A 48 48 0 0 1 4 58 Z"/>
 </svg></div>
           <div><div class="nav-name">Travel by Juniper Group</div><div class="nav-sub">A Vela Software Company</div></div>
         </div>
